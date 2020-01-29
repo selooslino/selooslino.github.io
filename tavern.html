@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head></head>
-        <title>Selo Oslino — Таверна "У Ефима"</title>
-        <meta name="description" content="Selo Oslino Official Website"/>
-        <meta name="keywords" content="selo,oslino,selo oslino,село,ослино,село ослино,talesofpangaea,tales of pangaea,
-            сказания пангеи, avicus delacroix, авикус делакруа, efim mikhailenko, ефим михайленко, nikita ponomarev, 
-            panamar, никита пономарев, панамарь, panamario, панамарио, apepeha, апепеха, apepeha lab, апепеха лаб, 
-            oleg samarsky, олег самарский, georgy zharkov, георгий жарков, таверна у Ефима"/>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="author" content="Avicus Delacroix (Discord: Avicus#1172)"/>
-        <style>
-            @font-face {font-family: oslino;src: url(font.ttf);}
-            * {box-sizing:border-box;font-family: oslino;font-size: large;}
-        </style>
-    <body>
-        <div id="logo" style="margin:7%">
-            <img src="logo.png" width="100%">
-        </div>
-        <div id="main" style="margin: 0% 7% 0% 7%;">
-            <h1 style="font-size: xx-large;">Таверна "У Ефима" 
-                <a href="index.html" style="float: right;font-size: large;">Назад</a></h1>
-            <p>
-                Таверна "У Ефима", расположенная в самом центре села Ослино — создана гостеприимным трактирщиком 
-                <a href="https://vk.com/superoslino">Ефимом Михайленко</a> для того, чтобы встречаться с односельчанами 
-                и понимать, насколько <b>ослино</b> жить в этой стране.
-            </p><p>
-                Вот немного ослинских видео, чтобы вы понимали, НАСКОЛЬКО ЖЕ ОСЛИНО, МАТЬ ТВОЮ:
-            </p><br>
+<html>
+    <head>
+        <title>Село Ослино</title>
+        <meta name="description" content="Официальный сайт Села Ослино"/>
+        <meta name="keywords" content="село,ослино,селоослино,апепеха,авикус,ефим,панамарь,гошан,самарский"/>
+        <style>.clearfix::after{content:"";clear:both;display:table}li a:hover {background-color: #19334d;}</style>
+    </head>
+    <body style="margin: 5%;box-sizing: border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <!-- Заголовок страницы -->
+        <header style="display: block;position: relative;" class="clearfix">
+            <img src="selooslino.png" style="width: 40%;float:left">
+            <div style="position: absolute;right: 0;bottom: 0;"><div 
+            style="float: right;text-align: right;"> <button onclick=
+            "login()">Вход для ослинцев</button><br> <span id="ok" 
+            style="color: forestgreen;display: none;position: absolute;
+            bottom: 0;right: 0;">Вход выполнен!</span> <span id="err" style=
+            "color: tomato;display: none;position: absolute;bottom: 0;
+            right: 0;">Ошибка!</span> </div> <div style="float: right;"> 
+            <input id="user" type="text"> <br> <input id="pass" type=
+            "password"> </div> <div style="float: right;"> Пользователь: 
+            <br> Пароль: </div></div>
+        </header>
+        <!-- Навигация страницы -->
+        <nav>
+            <ul style="list-style-type: none;margin: 15px 0px;padding: 0;overflow: hidden;background-color: #264d73;border-radius: 7px;">
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;background-color: #19334d;" href="tavern.html">Таверна "У Ефима"</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="oka.html">Ослиномобиль</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="top.html">Разработка игр</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="shrooms.html">Адепты Кастанеды</a></li>
+                <li><a style="float: right;color: white;text-decoration: none;padding: 15px;width: 16%;" href="contacts.html">Контакты и ссылки</a></li>
+            </ul>
+        </nav>
+        <iframe id="bablo" style="width: 100%;height: 700px;display: none;" src="https://docs.google.com/spreadsheets/d/18fgpexUOCxk-J5fCNyJTgB5mR_5-o0YbjXz-SqeE-No"></iframe>
 
+        <!-- Начало содержимого страницы -->
+        <div>
+            <h1>Таверна "У Ефима" <span style="color: gray;font-size: large;"> И жить будет не так ослино!</span></h1>
+            <p>Ты просыпаешься утром, ездуешь на работу, работаешь там, приходишь домой, жрёшь и падаешь замертво, 
+                чтобы поспать и завтра снова идти работать. В жопу такую жизнь. Иногда становится настолько <i>ослино</i>,
+                что только распахнутые двери таверны и компания хороших друзей может вернуть тебя к жизни.</p>
+            <p>Таверна в селе Ослино — райское наслаждение. Там всегда можно посидеть и расслабиться, щедрый трактирщик 
+                Ефим нальёт тебе Калы в грязный стакан, шеф-повар Гошан сделает тебе свой фирменный бутерброд, пальчики 
+                сломаешь! Полно всякого барахла, чтобы спаять из ардуино автоматический подливатор бухла в кружку, а 
+                будешь плохо себя вести — придёт Бабка и наваляет тебе.</p><br>
+            <hr>
             <div id="video" width="100%">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/D_3lnuKKIXY" frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -37,10 +52,11 @@
                 <h2 style="font-size: xx-large;">
                     Меню от шеф-повара
                 </h2><p>
-                    Шеф-повар таверны <a href="">Гошан</a> готовит свой фирменный бутерброд.<br>Пальчики сломаешь.
+                    Шеф-повар таверны Гошан готовит свой фирменный бутерброд.<br>Пальчики сломаешь.
                 </p>
                 </div>
             </div>
+            <hr>
             <div id="video" width="100%">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/5z1zFKJNKzk" 
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
@@ -49,12 +65,23 @@
                 <h2 style="font-size: xx-large;">
                     Ослинцы собираются в институт
                 </h2><p>
-                    Или немного о правильных решениях на <del>каждый день</del> первое сентября.
+                    Или немного о правильных решениях на <br><del>каждый день</del> первое сентября.
                 </p>
                 </div>
             </div>
-
-            
+            <hr>
         </div>
+        <!-- Конец содержимого страницы -->
+
+        <!-- Футер страницы -->
+        <br><footer style="display: block;background-color: #264d73;color: white;border-radius: 7px;text-align: center;padding: 15px;">2020 Село Ослино<br></footer>
+
+        <script>function login(){if(document.getElementById("user").value==
+        "selooslino"&&document.getElementById("pass").value=="apepeha"){document
+        .getElementById("ok").style.display="block";document.getElementById("err")
+        .style.display="none";document.getElementById("bablo").style.display="block";
+        }else{document.getElementById("ok").style.display="none";document.
+        getElementById("err").style.display="block";document.getElementById("bablo")
+        .style.display="none";};};</script>
     </body>
 </html>
