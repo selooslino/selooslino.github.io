@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Село Ослино</title>
+        <meta name="description" content="Официальный сайт Села Ослино"/>
+        <meta name="keywords" content="село,ослино,селоослино,апепеха,авикус,ефим,панамарь,гошан,самарский"/>
+        <style>.clearfix::after{content:"";clear:both;display:table}li a:hover {background-color: #19334d;}</style>
+    </head>
+    <body style="margin: 5%;box-sizing: border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <!-- Заголовок страницы -->
+        <header style="display: block;position: relative;" class="clearfix">
+            <img src="selooslino.png" style="width: 40%;float:left">
+            <div style="position: absolute;right: 0;bottom: 0;"><div 
+            style="float: right;text-align: right;"> <button onclick=
+            "login()">Вход для ослинцев</button><br> <span id="ok" 
+            style="color: forestgreen;display: none;position: absolute;
+            bottom: 0;right: 0;">Вход выполнен!</span> <span id="err" style=
+            "color: tomato;display: none;position: absolute;bottom: 0;
+            right: 0;">Ошибка!</span> </div> <div style="float: right;"> 
+            <input id="user" type="text"> <br> <input id="pass" type=
+            "password"> </div> <div style="float: right;"> Пользователь: 
+            <br> Пароль: </div></div>
+        </header>
+        <!-- Навигация страницы -->
+        <nav>
+            <ul style="list-style-type: none;margin: 15px 0px;padding: 0;overflow: hidden;background-color: #264d73;border-radius: 7px;">
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="tavern.html">Таверна "У Ефима"</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="oka.html">Ослиномобиль</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;background-color: #19334d;" href="top.html">Разработка игр</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="shrooms.html">Адепты Кастанеды</a></li>
+                <li><a style="float: right;color: white;text-decoration: none;padding: 15px;width: 16%;" href="contacts.html">Контакты и ссылки</a></li>
+            </ul>
+        </nav>
+        <iframe id="bablo" style="width: 100%;height: 700px;display: none;" src="https://docs.google.com/spreadsheets/d/18fgpexUOCxk-J5fCNyJTgB5mR_5-o0YbjXz-SqeE-No"></iframe>
+
+        <!-- Начало содержимого страницы -->
+        <div>
+            <h1>Разработка игр <span style="color: gray;font-size: large;"></span></h1>
+            <ul style="list-style-type: none;margin: 15px 0px;padding: 0;overflow: hidden;background-color: #264d73;border-radius: 7px;">
+                <li><a id="tb" style="float: left;color: white;text-decoration: none;padding: 15px;width: 40%;background-color: #19334d;" href="top.html">Tales of Pangaea</a></li>
+                <li><a id="pb" style="float: right;color: white;text-decoration: none;padding: 15px;width: 40%;" href="panamar.html">Panamario</a></li>
+            </ul>
+            <h2>Tales of Pangaea</h2>
+            <p>Tales of Pangaea — наш основной проект по созданию игры в жанре онлайн РПГ.</p>
+            <p>В игре будет 6 рас и 7 классов, а также огромный материк Пангея, на котором будет происходить сюжет. Сама игра в настоящее время находится в стадии активной 
+                разработки, мы работаем над программной реализацией управления, взаимодействия с объектами и поведения, а также надо созданием 3D-моделей для нашей игры.</p>
+            <p>Для получения подробной информации по игре заходите на <a href="https://talesofpangaea.github.io" style="color: #264d73;">Сайт проекта</a>!</p>
+        </div>
+        <!-- Конец содержимого страницы -->
+
+        <!-- Футер страницы -->
+        <br><footer style="display: block;background-color: #264d73;color: white;border-radius: 7px;text-align: center;padding: 15px;">2020 Село Ослино<br></footer>
+
+        <script>function login(){if(document.getElementById("user").value==
+        "selooslino"&&document.getElementById("pass").value=="apepeha"){document
+        .getElementById("ok").style.display="block";document.getElementById("err")
+        .style.display="none";document.getElementById("bablo").style.display="block";
+        }else{document.getElementById("ok").style.display="none";document.
+        getElementById("err").style.display="block";document.getElementById("bablo")
+        .style.display="none";};};</script>
+    </body>
+</html>
