@@ -1,58 +1,53 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head></head>
-        <title>Selo Oslino</title>
-        <meta name="description" content="Selo Oslino Official Website"/>
-        <meta name="keywords" content="selo,oslino,selo oslino,село,ослино,село ослино,talesofpangaea,tales of pangaea,
-            сказания пангеи, avicus delacroix, авикус делакруа, efim mikhailenko, ефим михайленко, nikita ponomarev, 
-            panamar, никита пономарев, панамарь, panamario, панамарио, apepeha, апепеха, apepeha lab, апепеха лаб, 
-            oleg samarsky, олег самарский, georgy zharkov, георгий жарков"/>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="author" content="Avicus Delacroix (Discord: Avicus#1172)"/>
-        <style>
-            @font-face {font-family: oslino;src: url(font.ttf);}
-            * {box-sizing:border-box;font-family: oslino;font-size: large;}
-        </style>
-    <body>
-        <div id="logo" style="margin:7%">
-            <img src="logo.png" width="100%">
+<html>
+    <head>
+        <title>Село Ослино</title>
+        <meta name="description" content="Официальный сайт Села Ослино"/>
+        <meta name="keywords" content="село,ослино,селоослино,апепеха,авикус,ефим,панамарь,гошан,самарский"/>
+        <style>.clearfix::after{content:"";clear:both;display:table}li a:hover {background-color: #19334d;}</style>
+    </head>
+    <body style="margin: 5%;box-sizing: border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <!-- Заголовок страницы -->
+        <header style="display: block;position: relative;" class="clearfix">
+            <img src="selooslino.png" style="width: 40%;float:left">
+            <div style="position: absolute;right: 0;bottom: 0;"><div 
+            style="float: right;text-align: right;"> <button onclick=
+            "login()">Вход для ослинцев</button><br> <span id="ok" 
+            style="color: forestgreen;display: none;position: absolute;
+            bottom: 0;right: 0;">Вход выполнен!</span> <span id="err" style=
+            "color: tomato;display: none;position: absolute;bottom: 0;
+            right: 0;">Ошибка!</span> </div> <div style="float: right;"> 
+            <input id="user" type="text"> <br> <input id="pass" type=
+            "password"> </div> <div style="float: right;"> Пользователь: 
+            <br> Пароль: </div></div>
+        </header>
+        <!-- Навигация страницы -->
+        <nav>
+            <ul style="list-style-type: none;margin: 15px 0px;padding: 0;overflow: hidden;background-color: #264d73;border-radius: 7px;">
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="tavern.html">Таверна "У Ефима"</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="oka.html">Ослиномобиль</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="top.html">Разработка игр</a></li>
+                <li><a style="float: left;color: white;text-decoration: none;padding: 15px;width: 16%;" href="shrooms.html">Адепты Кастанеды</a></li>
+                <li><a style="float: right;color: white;text-decoration: none;padding: 15px;width: 16%;" href="contacts.html">Контакты и ссылки</a></li>
+            </ul>
+        </nav>
+        <iframe id="bablo" style="width: 100%;height: 700px;display: none;" src="https://docs.google.com/spreadsheets/d/18fgpexUOCxk-J5fCNyJTgB5mR_5-o0YbjXz-SqeE-No"></iframe>
+
+        <!-- Начало содержимого страницы -->
+        <div>
+            <img src="landscape.jpg" style="width: 100%;border-radius: 10px;">
         </div>
-        <div id="menu" style="margin: 0% 7% 0% 7%;">
-            <div style="float:left;width:14%;margin-right:2.6%;text-align: center;">
-                <img src="tav.png" width="100%"><br>
-                <a href="tavern">Таверна</a>
-            </div>
-        </div>
-        <div id="menu" style="margin: 0% 7% 0% 7%;">
-            <div style="float:left;width:14%;margin-right:2.6%;text-align: center;">
-                <img src="dev.png" width="100%"><br>
-                <a href="gamedev">Гейм дев</a>
-            </div>
-        </div>
-        <div id="menu" style="margin: 0% 7% 0% 7%;">
-            <div style="float:left;width:14%;margin-right:2.6%;text-align: center;">
-                <img src="oka.png" width="100%"><br>
-                <a href="oslinomobil">Ослиномобиль</a>
-            </div>
-        </div>
-        <div id="menu" style="margin: 0% 7% 0% 7%;">
-            <div style="float:left;width:14%;margin-right:2.6%;text-align: center;">
-                <img src="znk.png" width="100%"><br>
-                <a href="znk">Самоделки</a>
-            </div>
-        </div>
-        <div id="menu" style="margin: 0% 7% 0% 7%;">
-            <div style="float:left;width:14%;margin-right:2.6%;text-align: center;">
-                <img src="unnamed.png" width="100%"><br>
-                <a href="https://www.youtube.com/channel/UCx_hQ-3jXen_SSQUJarn2hA/videos">Youtube</a>
-            </div>
-        </div>
-        <div id="menu" style="margin: 0% 7% 0% 7%;">
-            <div style="float:left;width:14%;margin-right:2.6%;text-align: center;">
-                <img src="5.png" width="100%"><br>
-                <a href="https://docs.google.com/spreadsheets/d/18fgpexUOCxk-J5fCNyJTgB5mR_5-o0YbjXz-SqeE-No/edit#gid=0">Бухгалтерия</a>
-            </div>
-        </div>
+        <!-- Конец содержимого страницы -->
+
+        <!-- Футер страницы -->
+        <br><footer style="display: block;background-color: #264d73;color: white;border-radius: 7px;text-align: center;padding: 15px;">2020 Село Ослино<br></footer>
+
+        <script>function login(){if(document.getElementById("user").value==
+        "selooslino"&&document.getElementById("pass").value=="apepeha"){document
+        .getElementById("ok").style.display="block";document.getElementById("err")
+        .style.display="none";document.getElementById("bablo").style.display="block";
+        }else{document.getElementById("ok").style.display="none";document.
+        getElementById("err").style.display="block";document.getElementById("bablo")
+        .style.display="none";};};</script>
     </body>
 </html>
