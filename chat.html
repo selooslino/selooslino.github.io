@@ -49,10 +49,10 @@
 					url:"http://195.123.221.123:8228/oslino/chat/show.php",
 					data: {id: id},
 					success:function(data){
-						if(data!=1)
-						{
+						/*if(data!=1)
+						{*/
 							$("#msg").prepend(data);
-						}
+						//}
 					}
 				});
 			},1000);
