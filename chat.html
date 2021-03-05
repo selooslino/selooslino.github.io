@@ -16,7 +16,7 @@
 					alert("Введите текст");
 				} else {
 					$.ajax({
-						url: "action.php",
+						url: "http://195.123.221.123:8228/oslino/chat/action.php",
 						type: "POST",
 						data: {text_chat: text},
 						success: function(){
@@ -30,7 +30,7 @@
 				var id = $("h3:first").attr("id");
 				$.ajax({ 
 					type:"POST",
-					url:"show.php",
+					url:"http://195.123.221.123:8228/oslino/chat/show.php",
 					data: {id: id},
 					success:function(data){
 						if(data!=1)
