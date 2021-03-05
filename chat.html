@@ -5,6 +5,44 @@
         <meta name="description" content="Официальный сайт Села Ослино"/>
         <meta name="keywords" content="село,ослино,селоослино,апепеха,авикус,ефим,панамарь,гошан,самарский"/>
         <style>.clearfix::after{content:"";clear:both;display:table}li a:hover {background-color: #19334d;}</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+			var button = $("button");
+			button.click(function(){
+				var text = $("textarea").val();
+				if(text == "") {
+					alert("Введите текст");
+				} else {
+					$.ajax({
+						url: "action.php",
+						type: "POST",
+						data: {text_chat: text},
+						success: function(){
+							$("textarea").val("");
+						}
+					});
+				}
+			});
+			
+			window.setInterval(function showMess(){
+				var id = $("h3:first").attr("id");
+				$.ajax({ 
+					type:"POST",
+					url:"show.php",
+					data: {id: id},
+					success:function(data){
+						if(data!=1)
+						{
+							$("#msg").prepend(data);
+						}
+					}
+				});
+			},1000);
+		
+		});
+	</script>
     </head>
     <body style="margin: 5%;box-sizing: border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
         <!-- Заголовок страницы -->
