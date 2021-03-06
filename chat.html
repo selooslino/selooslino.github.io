@@ -32,7 +32,7 @@
 					alert("Введите текст");
 				} else {
 					$.ajax({
-						url: "https://selooslino.lovestoblog.com/chat/action.php",
+						url: "https://selooslino.lovestoblog.com/action.php",
 						type: "POST",
 						data: {text_chat: text},
 						success: function(){
@@ -46,7 +46,7 @@
 				var id = $("h3:first").attr("id");
 				$.ajax({ 
 					type:"POST",
-					url:"https://selooslino.lovestoblog.com/chat/show.php",
+					url:"https://selooslino.lovestoblog.com/show.php",
 					data: {id: id},
 					success:function(data){
 						if(data!=1)
