@@ -1,2 +1,2 @@
 # selooslino.github.io
-Selo Oslino Website
+https://selooslino.ru
