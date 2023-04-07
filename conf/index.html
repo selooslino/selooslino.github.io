@@ -6,16 +6,18 @@
         <style>
             body {background-color: black;}
             video {width: 33%;border-radius: 10px;}
+            #voximplantlocalvideo { position: absolute; right: 0; }
         </style>
     </head>
-<body id="placevideohere">
+<body>
+    <div id="localvideo">Text, or not?</div>
 
     <script>
 const letsdoit = async () => {
     const sdk = VoxImplant.getInstance();
     try {
         await sdk.init({
-            localVideoContainerId: "placevideohere"
+            localVideoContainerId: "localvideo"
         });
         try {
             await sdk.connect();
