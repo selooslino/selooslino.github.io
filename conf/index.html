@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>AviConf</title>
+        <title>conf</title>
         <script type="text/javascript" src="https://unpkg.com/voximplant-websdk@beta"></script>
     </head>
 <body>
@@ -22,13 +22,12 @@ const letsdoit = async () => {
             document.body.insertAdjacentHTML('beforeend', "<p>Connection failed! Check your internet and reload the page.</p><button onclick='location.reload()'>Reload?</button>");
         }
         try {   
-            await sdk.login("guest","guestuser");
+            await sdk.login("guest@conftest.avicus.n4.voximplant.com","guestuser");
             const callSettings = { number: "test", simulcast: true, video: { sendVideo: true, receiveVideo: true } };
             const conf = sdk.callConference(callSettings);
             conf.addEventListener(VoxImplant.CallEvents.Connected, (e) => {
                 sdk.showLocalVideo(true);
                 e.call.on(VoxImplant.CallEvents.EndpointAdded, (e) => {
-                    document.getElementById("status").innerHTML = "A new member joined!";
                     const tmpl = `<div id="${e.endpoint.id}"></div>`;
                     document.body.insertAdjacentHTML('beforeend', tmpl);
                     e.endpoint.on(VoxImplant.EndpointEvents.RemoteMediaAdded, (e) => {
@@ -37,7 +36,7 @@ const letsdoit = async () => {
                 });
             });
         } catch (e) {
-            document.body.insertAdjacentHTML('beforeend', "<p>Login failed!</p><button onclick='location.reload()'>Reload?</button>");
+            document.body.insertAdjacentHTML('beforeend', "<p>Login failed! Probably Avi deleted the user.");
         }
     } catch (e) { location.reload(); }
 };
