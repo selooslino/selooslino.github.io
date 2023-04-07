@@ -5,20 +5,21 @@
         <meta charset="utf-8">
         <script type="text/javascript" src="https://unpkg.com/voximplant-websdk@beta"></script>
         <style>
-            body {background-color: black; color: lime; font-family: 'Courier New', Courier, monospace;}
-            video {width: 25%;border-radius: 10px;}
-            /* #voximplantlocalvideo { position: absolute; top: 10px; right: 10px; } */
+            body { background-color: black; color: lime; font-family: 'Courier New', Courier, monospace; }
+            video { width: 25%; border-radius: 10px; } #voximplantlocalvideo { float:right; }
         </style>
     </head>
 <body>
     <div id="local">
-        <br><br>Это видео перехуйница, которую Ави написал на коленке с целью тестов.
-        <br><br> Можно будет потом забубенить видеозвонки или видеоконфы нассайт Ослино.
-        <br> Сверху справа отображается своё видео, ниже появляются другие участники.
-        <br><br> Кароч потестируйте, потом скажите, пригодится или нет, научу, как делать.
-        <br><br><button onclick="letsdoit()" id="letsdoit">Поехали, блять!</button>
-        <button onclick="fuckthis()" id="fuckthis" style="display: none;">Всё, хватит.</button>
-        <br><br>
+        <div style="width: 75%; float:left;">
+            <br><br>Это видео перехуйница, которую Ави написал на коленке с целью тестов.
+            <br><br> Можно будет потом забубенить видеозвонки или видеоконфы нассайт Ослино.
+            <br> Сверху справа отображается своё видео, ниже появляются другие участники.
+            <br><br> Кароч потестируйте, потом скажите, пригодится или нет, научу, как делать.
+            <br><br><button onclick="letsdoit()" id="letsdoit">Поехали, блять!</button>
+            <button onclick="fuckthis()" id="fuckthis" style="display: none;">Всё, хватит.</button>
+            <br><br>
+        </div>
     </div>
     <script>
 let conf;
