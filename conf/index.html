@@ -2,17 +2,19 @@
 <html>
     <head>
         <title>conf</title>
+        <meta charset="utf-8">
         <script type="text/javascript" src="https://unpkg.com/voximplant-websdk@beta"></script>
         <style>
-            body {background-color: black;}
-            video {width: 33%;border-radius: 10px;}
-            #voximplantlocalvideo { position: absolute; right: 0; }
+            body {background-color: black; color: lime;}
+            video {width: 25%;border-radius: 10px;}
+            /* #voximplantlocalvideo { position: absolute; right: 0; } */
         </style>
     </head>
 <body>
-    <div id="localvideo">Text, or not?</div>
+    <span id="localvideo"></span>
 
     <script>
+let conf;
 const letsdoit = async () => {
     const sdk = VoxImplant.getInstance();
     try {
@@ -27,7 +29,7 @@ const letsdoit = async () => {
         try {   
             await sdk.login("guest@conftest.avicus.n4.voximplant.com","guestuser");
             const callSettings = { number: "test", simulcast: true, video: { sendVideo: true, receiveVideo: true } };
-            const conf = sdk.callConference(callSettings);
+            conf = sdk.callConference(callSettings);
             conf.addEventListener(VoxImplant.CallEvents.Connected, (e) => {
                 sdk.showLocalVideo(true);
                 e.call.on(VoxImplant.CallEvents.EndpointAdded, (e) => {
