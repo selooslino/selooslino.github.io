@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Добавляю библиотеку веб сдк вокса -->
+        <script type="text/javascript" src="https://unpkg.com/voximplant-websdk@beta"></script>
+        <style>
+            body {
+                /* мне так больше нравится */
+                background-color: black;
+            }
+            video {
+                /* чтобы было красиво, закругляю края */
+                border-radius: 10px; 
+                /* делаю размер всех видео 33% от экрана */
+                width: 33%;
+            }
+        </style>
+    </head>
+<body>
+    <!-- Создаю контейнеры для локального и удалённого видео -->
+    <div id="localvideo"></div>
+    <div id="remotevideo"></div>
+
+    <script>
+
+const sdk = VoxImplant.getInstance(); // создаём инстанс веб сдк от вокса
+
+const login = async () => {
+    // инициализируем сдк
+    await sdk.init({
+        localVideoContainerId: "localvideo", 
+        remoteVideoContainerId: "remotevideo"
+    });
+    // коннектимся к облаку
+    await sdk.connect();
+    // логиним созданного в облаке юзера
+    await sdk.login("guest@conftest.avicus.n4.voximplant.com","guestuser");
+};
+
+const startconf = () => {
+    // создаём настройки конфы
+    const callSettings = {
+        number: "aviconf", // если указать другое значение, то будет другая чат-комната
+        video: {
+            sendVideo: true,
+            receiveVideo: true
+        },
+    };
+    // создаём конфу
+    const conf = sdk.callConference(callSettings);
+    
+    // обрабатываем события конфы
+    conf.addEventListener(VoxImplant.CallEvents.Connected, (e) => {
+        // когда мы подключились, начинаем показывать своё видео
+        sdk.showLocalVideo(true);
+            // как только подключается кто-то ещё, готовим пустой контейнер для видео
+            e.call.on(VoxImplant.CallEvents.EndpointAdded, (e) => {
+                const tmp = `<div id="${e.endpoint.id}"></div>`;
+                document.getElementById("remotevideo").insertAdjacentHTML('beforeend', tmp);
+                // как только начинает приходить видео, рендерим его в этот контейнер
+                e.endpoint.on(VoxImplant.EndpointEvents.RemoteMediaAdded, (e) => {
+                    e.mediaRenderer.render(document.getElementById(e.endpoint.id));
+                });
+            });
+    });
+    // когда мы отключились, прекращаем занимать камеру
+    conf.addEventListener(VoxImplant.CallEvents.Disconnected, (e) => {
+        sdk.showLocalVideo(false);
+    });
+};
+
+// если бы мы вводили логин/пароль вручную, то эту функцию можно было бы натянуть на кнопку
+// но так как у нас один захардкоженный юзер, мы её просто вызываем при загрузке страницы
+login();
+startconf();
+
+    </script>
+</body>
+</html>
