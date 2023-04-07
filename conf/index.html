@@ -26,16 +26,28 @@
 const sdk = VoxImplant.getInstance(); // создаём инстанс веб сдк от вокса
 
 const login = async () => {
-    // инициализируем сдк
-    await sdk.init({
-        localVideoContainerId: "localvideo", 
-        remoteVideoContainerId: "remotevideo"
-    });
-    // коннектимся к облаку
-    await sdk.connect();
-    // логиним созданного в облаке юзера
-    await sdk.login("guest@conftest.avicus.n4.voximplant.com","guestuser");
-    startconf();
+    try {
+        // инициализируем сдк и указываем созданные в HTML контейнеры для видео
+        await sdk.init({
+            localVideoContainerId: "localvideo", 
+            remoteVideoContainerId: "remotevideo"
+        });
+        // коннектимся к облаку
+        try {
+            await sdk.connect();
+        } catch (e) {
+            console.log("Connection failed");
+        }
+        // логиним созданного в облаке юзера
+        try {
+            await sdk.login(document.getElementById("username").value+"@conftest.avicus.n4.voximplant.com",document.getElementById("password").value);
+            startconf();
+        } catch (e) {
+            console.log("Login failed");
+        }
+    } catch (e) {
+        console.log("SDK init failed");
+    }
 };
 
 const startconf = () => {
