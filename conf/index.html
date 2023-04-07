@@ -35,6 +35,7 @@ const login = async () => {
     await sdk.connect();
     // логиним созданного в облаке юзера
     await sdk.login("guest@conftest.avicus.n4.voximplant.com","guestuser");
+    startconf();
 };
 
 const startconf = () => {
@@ -72,7 +73,6 @@ const startconf = () => {
 // если бы мы вводили логин/пароль вручную, то эту функцию можно было бы натянуть на кнопку
 // но так как у нас один захардкоженный юзер, мы её просто вызываем при загрузке страницы
 login();
-startconf();
 
     </script>
 </body>
