@@ -3,18 +3,18 @@
     <head>
         <title>conf</title>
         <script type="text/javascript" src="https://unpkg.com/voximplant-websdk@beta"></script>
+        <style>
+            video {width: 33%;}
+        </style>
     </head>
-<body>
-    <div id="remotevideo"></div>
-    <div id="localvideo"></div>
+<body id="placevideohere">
 
     <script>
 const letsdoit = async () => {
     const sdk = VoxImplant.getInstance();
     try {
         await sdk.init({
-            localVideoContainerId: "localvideo", 
-            remoteVideoContainerId: "remotevideo"
+            localVideoContainerId: "placevideohere"
         });
         try {
             await sdk.connect();
