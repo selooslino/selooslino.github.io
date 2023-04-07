@@ -40,7 +40,7 @@ const login = async () => {
         }
         // логиним созданного в облаке юзера
         try {
-            await sdk.login(document.getElementById("username").value+"@conftest.avicus.n4.voximplant.com",document.getElementById("password").value);
+            await sdk.login("guest@conftest.avicus.n4.voximplant.com","guestuser");
             startconf();
         } catch (e) {
             console.log("Login failed");
